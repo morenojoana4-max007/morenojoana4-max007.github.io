@@ -1,0 +1,229 @@
+/* --- GLOBAL STYLES & FONTS --- */
+:root {
+    --accent-gold: #f3e5ab;
+    /* Soft gold for highlights */
+    --forest-overlay: rgba(0, 0, 0, 0.3);
+    --glass-bg: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: #ffffff;
+    line-height: 1.6;
+    /* This background uses the dreamy forest image from your mockup */
+    background: linear-gradient(var(--forest-overlay), var(--forest-overlay)),
+        url('forest-bg.jpg')no-repeat center center fixed;
+    background-size: cover;
+    scroll-behavior: smooth;
+}
+
+/* --- NAVIGATION --- */
+.navbar {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    /* Matches the right-aligned nav in mockup */
+    padding-right: 50px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-gold);
+}
+
+/* --- HEADER --- */
+header {
+    text-align: center;
+    padding: 100px 20px 60px;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    /* Big and elegant */
+    font-weight: 700;
+    margin-bottom: 0;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+}
+
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-style: italic;
+    opacity: 0.95;
+    margin-top: -10px;
+}
+
+/* --- CONTAINERS & GLASS PANELS --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 40px;
+    /* Rounded corners like the mockup */
+    padding: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* --- ABOUT SECTION --- */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.profile-img {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%; /* This makes it a perfect circle */
+    border: 5px solid var(--accent-gold); /* This adds the gold frame from your image */
+    object-fit: cover; /* This prevents your photo from looking stretched */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.bio-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* --- RESOURCE GRIDS --- */
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin: 60px 0 30px;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+/* --- CARDS (BOOKS, MENTORS, VIDEOS) --- */
+.card,
+.mentor-card,
+.video-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.book-card img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.mentor-card img {
+    object-fit: cover;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-gold);
+    margin-bottom: 15px;
+}
+
+
+
+.learn-btn {
+    background: #2d4a2d;
+    /* Forest green */
+    color: white;
+    border: 1px solid var(--accent-gold);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.learn-btn:hover {
+    background: #3e633e;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 80px 20px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.socials a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.socials a:hover {
+    color: var(--accent-gold);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-title {
+        font-size: 4rem;
+    }
+
+    .nav-links {
+        justify-content: center;
+        padding-right: 0;
+    }
+}
